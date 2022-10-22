@@ -1,6 +1,9 @@
-const generateMarkdown = require('./utils/generateMarkdown')
+//const generateMarkdown = require('./utils/generateMarkdown')
 const fs = require('fs');
 const inquirer = require('inquirer');
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
 
 let team = []
 
@@ -12,7 +15,7 @@ const firstQuestions = [{
   {
     type: 'input',
     message: 'Enter the team manager\'s employee ID',
-    name: 'email',
+    name: 'ID',
   },
   {
     type: 'input',
@@ -32,6 +35,9 @@ const firstQuestions = [{
 
 // TODO: Create a function to write README file
 function getTeamMembers (firstAnswers) {
+    console.log(firstAnswers)
+    const { name, ID, email, office, teamSize } = firstAnswers
+    team[0] = new Manager()
     
 }
 
