@@ -59,20 +59,12 @@ const questions = [{
             message: 'What is the team member\'s github username?',
             name: 'github',
             when: (answers) => answers.role[0] === "Engineer"
-            /*{
-                if (answers.role === ["Engineer"]) {
-                    return true;
-                }}*/
         },
         {
             type: 'input',
             message: 'What is the name of the team member\'s school?',
             name: 'school',
             when: (answers) => answers.role[0] === "Intern"
-            /*{
-                if (answers.role === ["Intern"]) {
-                    return true;
-                }}*/
         },
     ]
   }];
@@ -100,11 +92,11 @@ function getTeamMembers (answers) {
             team.push(intern)
         }
     });
-    console.log(team)
-        
-    console.log(generateHTML(team))
     
-    
+
+    fs.writeFile("./dist/index.html", generateHTML(team), (err) =>
+    err ? console.error(err) : console.log('README file created in output folder')
+    )
     
 }
 init();

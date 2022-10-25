@@ -24,7 +24,7 @@ function generateMemberCards(team) {
     team.forEach (member => {
         if (member.constructor.name === "Manager") {
             const { name, ID, email, office } = member
-            card += `<section>
+            cards += `<section>
             <h2>${name}</h2>
             <h3>Manager</h3>
             <p>ID: ${ID}</p>
@@ -33,7 +33,7 @@ function generateMemberCards(team) {
             </section>`
         } else if (member.constructor.name === "Engineer") {
             const { name, ID, email, github } = member
-            card += `<section>
+            cards += `<section>
             <h2>${name}</h2>
             <h3>Engineer</h3>
             <p>ID: ${ID}</p>
@@ -42,7 +42,7 @@ function generateMemberCards(team) {
             </section>`
         } else {
             const { name, ID, email, school } = member
-            card += `<section>
+            cards += `<section>
             <h2>${name}</h2>
             <h3>Engineer</h3>
             <p>ID: ${ID}</p>

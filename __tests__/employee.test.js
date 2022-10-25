@@ -1,46 +1,52 @@
-const Employee = require('../dist/employee');
+const Employee = require('../lib/employee');
  
 describe('Employee', () => {
     describe("Initialization", () => {
         it("should create an object with a name, id, and email if provided valid arguments", () => {
-          const employee = new Employee("employee's name", "employee's name", "employee's name");
+          const employee = new Employee("employee's name", 1, "employee@email");
     
-          expect(child.name).toEqual("Sarah");
-          expect(child.age).toEqual(3);
+          expect(employee.name).toEqual("employee's name");
+          expect(employee.id).toEqual(1);
+          expect(employee.email).toEqual("employee@email");
         });
     
         it("should throw an error if provided no arguments", () => {
-          const cb = () => new Child();
-    
-          expect(cb).toThrow();
+          const employee = () => new Employee();
+          const err = new Error("'name' must be a non-empty string");
+
+          expect(employee).toThrow(err);
         });
     
-        it("should throw an error if not provided an age", () => {
-          const cb = () => new Child("Sarah");
-          const err = new Error("Expected parameter 'age' to be a non-negative number");
+        it("should throw an error if not provided an id or email", () => {
+          const employee = () => new Employee("employee's name", 1);
+          const err = new Error("an email address must be provided");
+
+          const employee2 = () => new Employee("employee's name");
+          const err2 = new Error("'id' must be a number");
     
-          expect(cb).toThrowError(err);
+          expect(employee).toThrowError(err);
+          expect(employee2).toThrowError(err2);
         });
     
         it("should throw an error if 'name' is not a string", () => {
-          const cb = () => new Child(3, 2);
-          const err = new Error("Expected parameter 'name' to be a non-empty string");
+          const employee = () => new Employee(1, 1, "employee@email");
+          const err = new Error("'name' must be a non-empty string");
     
-          expect(cb).toThrowError(err);
+          expect(employee).toThrowError(err);
         });
     
-        it("should throw an error if 'age' is not a number", () => {
-          const cb = () => new Child("Sarah", "2");
-          const err = new Error("Expected parameter 'age' to be a non-negative number");
+        it("should throw an error if 'id' is not a number", () => {
+          const employee = () => new Employee("employee's name", "id", "employee@email");
+          const err = new Error("'id' must be a number");
     
-          expect(cb).toThrowError(err);
+          expect(employee).toThrowError(err);
         });
     
-        it("should throw an error if 'age' is less than 0", () => {
-          const cb = () => new Child("Sarah", -1);
-          const err = new Error("Expected parameter 'age' to be a non-negative number");
+        it("should throw an error if 'email' does not contain an '@'", () => {
+          const employee = () => new Employee("employee's name", 1, "employee's email");
+          const err = new Error("'email' must be an email address");
     
-          expect(cb).toThrowError(err);
+          expect(employee).toThrowError(err);
         });
       });
     });
