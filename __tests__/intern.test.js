@@ -24,5 +24,15 @@ describe('Intern', () => {
     
           expect(intern).toThrowError(err);
         });
+
+        it("the prototype methods should return the correct corresponding value", () => {
+          const intern = new Intern("intern's name", 1, "intern@email", "intern's school");
+
+          expect(intern.getName()).toEqual("intern's name");
+          expect(intern.getId()).toEqual(1);
+          expect(intern.getEmail()).toEqual("intern@email");
+          expect(intern.getRole()).toEqual("Intern");
+          expect(intern.getSchool()).toEqual("intern's school");
+        });
       });
     });

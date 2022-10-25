@@ -24,5 +24,15 @@ describe('Manager', () => {
     
           expect(manager).toThrowError(err);
         });
+
+        it("the prototype methods should return the correct corresponding value", () => {
+          const manager = new Manager("manager's name", 1, "manager@email", 1);
+
+          expect(manager.getName()).toEqual("manager's name");
+          expect(manager.getId()).toEqual(1);
+          expect(manager.getEmail()).toEqual("manager@email");
+          expect(manager.getRole()).toEqual("Manager");
+          expect(manager.getOffice()).toEqual(1);
+        });
       });
     });

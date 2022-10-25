@@ -48,5 +48,14 @@ describe('Employee', () => {
     
           expect(employee).toThrowError(err);
         });
+        
+        it("the prototype methods should return the correct corresponding value", () => {
+          const employee = new Employee("employee's name", 1, "employee@email");
+
+          expect(employee.getName()).toEqual("employee's name");
+          expect(employee.getId()).toEqual(1);
+          expect(employee.getEmail()).toEqual("employee@email");
+          expect(employee.getRole()).toEqual("Employee");
+        });
       });
     });

@@ -24,5 +24,15 @@ describe('Engineer', () => {
     
           expect(engineer).toThrowError(err);
         });
+        
+        it("the prototype methods should return the correct corresponding value", () => {
+          const engineer = new Engineer("engineer's name", 1, "engineer@email", "engineer's username");
+
+          expect(engineer.getName()).toEqual("engineer's name");
+          expect(engineer.getId()).toEqual(1);
+          expect(engineer.getEmail()).toEqual("engineer@email");
+          expect(engineer.getRole()).toEqual("Engineer");
+          expect(engineer.getGithub()).toEqual("engineer's username");
+        });
       });
     });

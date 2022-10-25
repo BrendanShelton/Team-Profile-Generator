@@ -1,5 +1,4 @@
-//const Engineer = require("../lib/engineer")
-
+//returns the HTML for the webpage displaying the team members' information
 function generateHTML(team) {
     return `<!DOCTYPE html>
     <html lang="en">
@@ -16,36 +15,37 @@ function generateHTML(team) {
             ${generateMemberCards(team)}
         </main>
     </body>
-    </html>`
+    </html>`;
 }
 
+//loops through the team array and adds the HTML for cards for each team member to a string which is returned
 function generateMemberCards(team) {
     cards = ""
     team.forEach (member => {
-        if (member.constructor.name === "Manager") {
-            const { name, ID, email, office } = member
+        if (member.getRole() === "Manager") {
+            const { name, id, email, office } = member
             cards += `<section>
             <h2>${name}</h2>
             <h3>Manager</h3>
-            <p>ID: ${ID}</p>
+            <p>ID: ${id}</p>
             <p>Email: ${email}</p>
             <p>Office number: ${office}</p>
             </section>`
-        } else if (member.constructor.name === "Engineer") {
-            const { name, ID, email, github } = member
+        } else if (member.getRole() === "Engineer") {
+            const { name, id, email, github } = member
             cards += `<section>
             <h2>${name}</h2>
             <h3>Engineer</h3>
-            <p>ID: ${ID}</p>
+            <p>ID: ${id}</p>
             <p>Email: ${email}</p>
-            <p>Github: <a href="https://github.com/${github}">username</a></p>
+            <p>Github: <a href="https://github.com/${github}">${github}</a></p>
             </section>`
         } else {
-            const { name, ID, email, school } = member
+            const { name, id, email, school } = member
             cards += `<section>
             <h2>${name}</h2>
-            <h3>Engineer</h3>
-            <p>ID: ${ID}</p>
+            <h3>Intern</h3>
+            <p>ID: ${id}</p>
             <p>Email: ${email}</p>
             <p>School: ${school}</p>
             </section>`
@@ -53,7 +53,7 @@ function generateMemberCards(team) {
         
     })
 
-    return cards
+    return cards;
 }
 /*`<section>
 <h2>name</h2>
