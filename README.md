@@ -7,7 +7,7 @@ This application generates an HTML file for a webpage showing the information of
 
 ## Installation
 
-this application requires Node.js, Inquirer, and Inquirer-loop
+This application requires Node.js, Inquirer, and Inquirer-loop. Open the root folder in a terminal and enter "npm i"
 
 ## Usage
 
@@ -17,6 +17,10 @@ https://github.com/BrendanShelton/Team-Profile-Generator
 
 ![screenshot of questions](screenshot1.PNG)
 ![screenshot of webpage created with user answers](screenshot2.PNG)
+
+## Technologies used
+
+HTML, CSS, Javascript, Node.js, Inquirer, Inquirer-loop
 
 ## Credits
 
