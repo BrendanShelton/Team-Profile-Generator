@@ -11,7 +11,7 @@ This application requires Node.js, Inquirer, and Inquirer-loop. Open the root fo
 
 ## Usage
 
-After dependencies have been installed, Open the application in a terminal. Enter "node index" into the command line. Answer all the questions. The HTML file for the webpage displaying the team members' information will be generated in the dist folder
+After dependencies have been installed, Open the application in a terminal. Enter "node index" into the command line. Answer all the questions. The HTML file for the webpage displaying the team members' information will be generated in the dist folder.
 
 https://github.com/BrendanShelton/Team-Profile-Generator
 
@@ -20,7 +20,7 @@ https://github.com/BrendanShelton/Team-Profile-Generator
 
 ## Technologies used
 
-HTML, CSS, Javascript, Node.js, Inquirer, Inquirer-loop
+HTML, CSS, Javascript, Node.js, Inquirer, Inquirer-loop, Jest
 
 ## Credits
 
