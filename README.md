@@ -7,7 +7,7 @@ This application generates an HTML file for a webpage showing the information of
 
 ## Installation
 
-Clone this repository by opening a terminal in the folder which will hold it and enter "git clone https://github.com/BrendanShelton/blog.git". This application requires Node.js, Inquirer, and Inquirer-loop. Install dependencies by opening the root folder in a terminal and enter "npm i"
+Clone this repository by opening a terminal in the folder which will hold it and enter "git clone https://github.com/BrendanShelton/Team-Profile-Generator.git". This application requires Node.js, Inquirer, and Inquirer-loop. Install dependencies by opening the root folder in a terminal and enter "npm i"
 
 ## Usage
 
