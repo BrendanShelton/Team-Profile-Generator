@@ -3,7 +3,7 @@
 
 ## Description
 
-This application generates an HTML file for a webpage showing the information of the employees on a team after the user answers
+This application generates an HTML file for a webpage showing the information of the employees on a team after the user answers questions.
 
 ## Installation
 
